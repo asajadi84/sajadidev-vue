@@ -1,0 +1,247 @@
+@font-face {
+    font-family: Vazirmatn FD;
+    src: url("../fonts/Vazirmatn-FD-Regular.woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: Vazirmatn FD;
+    src: url("../fonts/Vazirmatn-FD-Bold.woff2");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: Vazirmatn FD;
+    src: url("../fonts/Vazirmatn-FD-Black.woff2");
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: Orbitron;
+    src: url("../fonts/Orbitron-VariableFont_wght.woff2") format("woff2 supports variations"),
+         url("../fonts/Orbitron-VariableFont_wght.woff2") format("woff2-variations");
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    --black: #000000;
+    --white: #ffffff;
+    --background: #fafafa;
+    --warning: #ffc107;
+    --primary-light: #e0f2f1;
+    --primary: #009688;
+    --primary-dark: #00796b;
+    --secondary: #d4e157;
+    --secondary-dark: #c0ca33;
+}
+
+::selection {
+    background-color: var(--secondary);
+    color: var(--black);
+}
+
+body {
+    background-color: var(--background) !important;
+    font-family: Vazirmatn FD !important;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    overflow-x: hidden;
+}
+
+h1 {
+    font-size: 3rem !important;
+    font-weight: 900 !important;
+}
+
+h2 {
+    font-size: 1.75rem !important;
+    font-weight: 700 !important;
+}
+
+ul {
+    line-height: 32px;
+    list-style: none;
+}
+
+li::before {
+    content: "⬤";
+    color: var(--secondary);
+    margin-left: 8px;
+    margin-right: 28px;
+    width: 48;
+}
+
+button {
+    border-width: 0;
+}
+
+small {
+    color: var(--primary);
+}
+
+.container--primary {
+    background-color: var(--primary);
+}
+
+.button--primary {
+    background-color: var(--secondary);
+    border-radius: 32px;
+    color: var(--black);
+    font-size: 1.25rem;
+    padding: 2px 12px;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+.button--primary:hover {
+    background-color: var(--secondary-dark);
+    color: var(--black);
+}
+
+.button--secondary {
+    background-color: var(--primary);
+    border-radius: 32px;
+    color: var(--white);
+    font-size: 1.25rem;
+    padding: 2px 12px;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+.button--secondary:hover {
+    background-color: var(--primary-dark);
+    color: var(--white);
+}
+
+.icon--primary {
+    -webkit-user-drag: none;
+    border-radius: 16px;
+    background-color: var(--primary);
+    padding: 4px;
+    user-select: none;
+}
+
+.link--primary, .link--primary:hover {
+    color: var(--black);
+    font-size: 1.25rem;
+}
+
+.container--maincard {
+    padding: 0 0 24px;
+}
+
+.header--primary {
+    margin-bottom: 12px;
+    padding-top: 24px;
+}
+
+.maincard__body {
+    background-color: var(--white);
+    border-radius: 16px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 20px;
+    padding: 48px 64px;
+}
+
+.maincard__body--no-title {
+    background-color: var(--white);
+    border-radius: 16px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 20px;
+    margin-top: 24px;
+    padding: 48px 64px;
+}
+
+.title--primary {
+    margin-bottom: 0;
+}
+
+.infobox:not(:last-child) {
+    margin-bottom: 48px;
+}
+
+.infobox__header {
+    margin-bottom: 8px;
+}
+
+.infobox__title {
+    color: var(--black);
+    margin-bottom: 0;
+    margin-right: 8px;
+}
+
+.infobox__body {
+    padding-right: 56px;
+}
+
+.infobox__body p {
+    margin-bottom: 8px;
+}
+
+.infobox__link, .infobox__link:hover {
+    color: var(--black);
+    display: block;
+}
+
+.infobox__link:not(:last-child) {
+    margin-bottom: 12px;
+}
+
+.infobox__link--secondary {
+    background-color: var(--secondary);
+    border-radius: 32px;
+    color: var(--black);
+    padding: 2px 12px;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+.infobox__link--secondary:hover {
+    background-color: var(--secondary-dark);
+    color: var(--black);
+}
+
+.infobox__tool-icon {
+    aspect-ratio: 1 / 1;
+    margin-bottom: 16px;
+    margin-left: 16px;
+}
+
+.portfolio {
+    padding: 64px 0;
+}
+
+.portfolio__header {
+    margin-bottom: 24px;
+}
+
+.portfolio__title {
+    color: var(--primary);
+    margin-bottom: 0;
+    margin-right: 8px;
+}
+
+.portfolio__group {
+    padding-bottom: 24px;
+}
+
+.portfolio__container {
+    align-content: stretch;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    margin-top: 16px;
+}
+
+.alertbox {
+    background-color: var(--primary-light);
+    border-radius: 8px;
+    margin: 16px 0;
+    padding: 8px;
+}
