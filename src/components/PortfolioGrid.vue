@@ -1,26 +1,24 @@
 <template>
-    <h1>{{ skill }}</h1>
 
     <div class="portfolio__group">
-        <div v-if="!portfolios.length" class="alertbox">فاقد نمونه‌کار</div>
+        <div v-if="!filteredPortfolios.length" class="alertbox">فاقد نمونه‌کار</div>
         <div v-else class="justify-content-center portfolio__container">
-            <PortfolioCard v-for="(portfolio, index) of portfolios" :key="index" :portfolioItem="portfolio"/>
+            <PortfolioCard v-for="(portfolio, index) of filteredPortfolios" :key="index" :portfolioItem="portfolio"/>
         </div>
     </div>
 </template>
 
 <script setup>
-import { storeToRefs } from 'pinia'
 import { useResumeStore } from '@/store/resume'
 import { defineProps } from 'vue'
+import { computed } from 'vue'
 import PortfolioCard from '@/components/PortfolioCard.vue'
 const store = useResumeStore();
 
-//todo filteredPortfolios
-const { portfolios } = storeToRefs(store);
-
-defineProps({
+const props = defineProps({
     skill: {type: String, required: true}
 });
+
+const filteredPortfolios = computed(() => store.getFilteredPortfolios(props.skill));
 
 </script>

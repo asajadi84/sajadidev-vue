@@ -1,7 +1,7 @@
 <template>
     <div class="portfolio__card">
         <a :href="`/portfolio/showcase?id=${portfolioItem.id}`">
-            <img :src="getPortfolioFilePath(portfolioItem.pic_url)" :alt="portfolioItem.description" loading="lazy">
+            <img :src="getPortfolioFilePath(portfolioItem.thumbnail_file)" :alt="portfolioItem.description" loading="lazy">
             <div class="portfolio__card-content">
                 <p class="portfolio__card-title">{{ portfolioItem.title }}
                     <span v-if="portfolioItem.is_opensource" class="badge bg-dark">اوپن سورس</span>
