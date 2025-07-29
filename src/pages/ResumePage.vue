@@ -67,8 +67,8 @@
 <script setup>
 import { storeToRefs } from 'pinia'
 import { useResumeStore } from '@/store/resume'
-import { onMounted } from 'vue';
-import { Tooltip } from 'bootstrap/dist/js/bootstrap.bundle.min';
+import { onMounted } from 'vue'
+import { Tooltip } from 'bootstrap/dist/js/bootstrap.bundle.min'
 const store = useResumeStore();
 
 const { skills, tools } = storeToRefs(store);
@@ -83,11 +83,3 @@ onMounted(() => {
 });
 
 </script>
-
-<style>
-
-.tooltip {
-    font-family: Vazirmatn FD !important;
-}
-
-</style>

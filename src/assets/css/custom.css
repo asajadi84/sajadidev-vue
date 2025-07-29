@@ -245,3 +245,32 @@ small {
     margin: 16px 0;
     padding: 8px;
 }
+
+.tooltip {
+    font-family: Vazirmatn FD !important;
+}
+
+@media (max-width: 1200px) {
+
+    ul {
+        padding-right: 16px !important;
+    }
+
+    li::before {
+        margin-right: 0px;
+    }
+
+    .maincard__body {
+        padding: 48px 10%;
+    }
+
+    .maincard__body--no-title {
+        padding: 48px 10%;
+    }
+
+    .infobox__body {
+        padding-right: 0;
+        padding-top: 16px;
+    }
+
+}

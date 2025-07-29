@@ -6,6 +6,7 @@ import ProjectPage from './pages/ProjectPage.vue';
 import ResumePage from './pages/ResumePage.vue';
 import NotFoundPage from './pages/NotFoundPage.vue';
 import PortfolioPage from './pages/PortfolioPage.vue';
+import ShowcasePage from './pages/ShowcasePage.vue';
 
 const titlePrefix = 'SajadiDev - ';
 
@@ -14,6 +15,7 @@ const routes = [
     {path: "/project", component: ProjectPage, meta: {title: titlePrefix + "سفارش پروژه"}},
     {path: "/resume", component: ResumePage, meta: {title: titlePrefix + "رزومه علی سجادی"}},
     {path: "/portfolio", component: PortfolioPage, meta: {title: titlePrefix + "نمونه‌کارها"}},
+    {path: "/portfolio/showcase", component: ShowcasePage, meta: {title: titlePrefix + "..."}},
     {path: "/:pathMatch(.*)*", component: NotFoundPage, meta: {title: titlePrefix + "خطای 404"}}
 ];
 

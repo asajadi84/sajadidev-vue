@@ -1,6 +1,6 @@
 <template>
     <div class="portfolio__card">
-        <a :href="`/portfolio/showcase?id=${portfolioItem.id}`">
+        <router-link :to="`/portfolio/showcase?id=${portfolioItem.id}`">
             <img :src="getPortfolioFilePath(portfolioItem.thumbnail_file)" :alt="portfolioItem.description" loading="lazy">
             <div class="portfolio__card-content">
                 <p class="portfolio__card-title">{{ portfolioItem.title }}
@@ -8,7 +8,7 @@
                 </p>
                 <p class="portfolio__card-skill">{{ skillName }}</p>
             </div>
-        </a>
+        </router-link>
     </div>
 </template>
 

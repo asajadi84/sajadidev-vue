@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia'
+const _ = require('lodash');
 
 export const useResumeStore = defineStore('resume', {
 
@@ -324,6 +325,17 @@ export const useResumeStore = defineStore('resume', {
             }else{
                 return state.portfolios.filter(portfolio => portfolio.skill == skillId);
             }
+        },
+
+        getPortfolio: (state) => (portfolioId) => {
+            return state.portfolios.find(portfolio => portfolio.id == portfolioId);
+        },
+
+        getRandomPortfolios: (state) => {
+            return _.chain(state.portfolios)
+                .shuffle()
+                .slice(0, 6)
+                .value();
         }
 
     }

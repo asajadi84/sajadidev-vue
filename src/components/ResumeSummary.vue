@@ -40,4 +40,12 @@
     font-size: 1.25rem;
 }
 
+@media (max-width: 1200px) {
+
+    .summary {
+        padding: 64px 24px !important;
+    }
+    
+}
+
 </style>
