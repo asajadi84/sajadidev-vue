@@ -4,7 +4,7 @@
             <div class="d-flex flex-row flex-wrap align-items-center summary__header">
                 <img src="@/assets/icons/file-account.svg" width="48">
                 <h2 class="summary__title">خلاصه رزومه</h2>
-                <router-link to="/resume" class="ms-auto summary__link">مشاهده کامل ></router-link>
+                <v-btn to="/resume" variant="text" size="x-large" density="compact" class="ms-auto">مشاهده کامل ></v-btn>
             </div>
             <ul>
                 <li>بیش از 9 سال سابقه در برنامه‌نویسی در قالب نرم‌افزارهای تحت وب، اپلیکیشن‌های اندرویدی و بازی‌سازی</li>
@@ -33,11 +33,6 @@
     color: var(--secondary);
     margin-bottom: 0;
     margin-right: 8px;
-}
-
-.summary__link, .summary__link:hover {
-    color: var(--white);
-    font-size: 1.25rem;
 }
 
 @media (max-width: 1200px) {

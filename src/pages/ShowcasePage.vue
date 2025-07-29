@@ -81,8 +81,8 @@
                                 <div class="infobox__body">
                                     <p>وضعیت: {{ portfolio.status }}</p>
                                     <p>لینک:
-                                        <a v-if="portfolio.link_url.startsWith('http://') || portfolio.link_url.startsWith('https://')" class="infobox__link--secondary" :href="portfolio.link_url" target="_blank">لینک پروژه</a>
-                                        <a v-else class="infobox__link--secondary" style="cursor: not-allowed;">فاقد لینک</a>
+                                        <v-btn rounded="xl" density="compact" color="#d4e157" v-if="portfolio.link_url.startsWith('http://') || portfolio.link_url.startsWith('https://')" class="infobox__link--secondary" :href="portfolio.link_url" target="_blank">لینک پروژه</v-btn>
+                                        <v-btn rounded="xl" density="compact" color="#d4e157" v-else class="infobox__link--secondary" style="cursor: not-allowed;">فاقد لینک</v-btn>
                                     </p>
                                 </div>
                             </div>
@@ -91,7 +91,7 @@
 
                     <div class="d-flex flex-wrap align-items-center justify-content-center showcase__question">
                         <p>به پروژه مشابهی احتیاج دارید؟</p>
-                        <div><router-link to="/project" class="button--secondary">سفارش پروژه</router-link></div>
+                        <div><v-btn to="/project" size="large" rounded="xl" density="comfortable" color="#009688">سفارش پروژه</v-btn></div>
                     </div>
                 </div>
             </div>

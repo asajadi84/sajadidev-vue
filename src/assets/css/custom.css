@@ -91,36 +91,6 @@ small {
     background-color: var(--primary);
 }
 
-.button--primary {
-    background-color: var(--secondary);
-    border-radius: 32px;
-    color: var(--black);
-    font-size: 1.25rem;
-    padding: 2px 12px;
-    text-decoration: none;
-    transition: 0.5s;
-}
-
-.button--primary:hover {
-    background-color: var(--secondary-dark);
-    color: var(--black);
-}
-
-.button--secondary {
-    background-color: var(--primary);
-    border-radius: 32px;
-    color: var(--white);
-    font-size: 1.25rem;
-    padding: 2px 12px;
-    text-decoration: none;
-    transition: 0.5s;
-}
-
-.button--secondary:hover {
-    background-color: var(--primary-dark);
-    color: var(--white);
-}
-
 .icon--primary {
     -webkit-user-drag: none;
     border-radius: 16px;

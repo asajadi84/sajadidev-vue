@@ -3,7 +3,9 @@
         <div class="container container--maincard">
             <div class="d-flex flex-row header--primary align-items-center">
                 <h2 class="title--primary">رزومه علی سجادی</h2>
-                <a class="ms-auto button--secondary" href="/sajadi_ali_resume.pdf" target="_blank">دانلود PDF</a>
+                <span class="ms-auto">
+                    <v-btn href="/sajadi_ali_resume.pdf" target="_blank" size="large" rounded="xl" density="compact" color="#009688">دانلود PDF</v-btn>
+                </span>
             </div>
             <div class="maincard__body">
                 <div class="row">

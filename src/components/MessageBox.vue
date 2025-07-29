@@ -6,7 +6,7 @@
                     <img class="messagebox__clipart" src="@/assets/img/msg-clipart.svg">
                     <h2 class="messagebox__title align-items-center">{{ title }}</h2>
                     <p class="messagebox__description">{{ message }}</p>
-                    <router-link to="/" class="button--primary">صفحه اصلی</router-link>
+                    <v-btn to="/" size="x-large" rounded="xl" density="compact" color="#d4e157">صفحه اصلی</v-btn>
                 </div>
             </div>
         </div>
