@@ -28,6 +28,7 @@ import { useResumeStore } from '@/store/resume'
 import { useRoute } from 'vue-router'
 import { useRouter } from 'vue-router'
 import { computed } from 'vue'
+import { useSeoMeta } from '@unhead/vue'
 import MessageBox from '@/components/MessageBox.vue'
 import PortfolioGrid from '@/components/PortfolioGrid.vue'
 const store = useResumeStore();
@@ -36,6 +37,12 @@ const router = useRouter();
 
 const { skills } = storeToRefs(store);
 const activeSkill = computed(() => store.getActivePortfolioSkill(route.query.skill));
+
+useSeoMeta({
+  title: 'نمونه‌کارها',
+  ogUrl: 'https://sajadidev.ir/#/portfolio',
+  ogTitle: 'نمونه‌کارها',
+});
 
 function filterSkill(selectedSkill){
 

@@ -1,4 +1,4 @@
-import {createRouter, createWebHistory} from 'vue-router'
+import {createRouter, createWebHashHistory} from 'vue-router'
 
 //pages
 import IndexPage from './pages/IndexPage.vue'
@@ -8,25 +8,21 @@ import NotFoundPage from './pages/NotFoundPage.vue';
 import PortfolioPage from './pages/PortfolioPage.vue';
 import ShowcasePage from './pages/ShowcasePage.vue';
 
-const titlePrefix = 'SajadiDev - ';
-
 const routes = [
-    {path: "/", component: IndexPage, meta: {title: titlePrefix + "علی سجادی - طراح و توسعه‌دهنده فول استک"}},
-    {path: "/project", component: ProjectPage, meta: {title: titlePrefix + "سفارش پروژه"}},
-    {path: "/resume", component: ResumePage, meta: {title: titlePrefix + "رزومه علی سجادی"}},
-    {path: "/portfolio", component: PortfolioPage, meta: {title: titlePrefix + "نمونه‌کارها"}},
-    {path: "/portfolio/showcase", component: ShowcasePage, meta: {title: titlePrefix + "..."}},
-    {path: "/:pathMatch(.*)*", component: NotFoundPage, meta: {title: titlePrefix + "خطای 404"}}
+    {path: "/", component: IndexPage},
+    {path: "/project", component: ProjectPage},
+    {path: "/resume", component: ResumePage},
+    {path: "/portfolio", component: PortfolioPage},
+    {path: "/portfolio/showcase", component: ShowcasePage},
+    {path: "/:pathMatch(.*)*", component: NotFoundPage}
 ];
 
 const router = createRouter({
-    history: createWebHistory(),
-    routes
-});
-
-router.beforeEach((to, from, next) => {
-    document.title = to.meta.title;
-    next();
+    history: createWebHashHistory(),
+    routes,
+    scrollBehavior() {
+        return {top: 0}
+    }
 });
 
 export default router;

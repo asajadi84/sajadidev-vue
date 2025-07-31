@@ -107,6 +107,7 @@ import { computed } from 'vue'
 import { onMounted } from 'vue';
 import { Fancybox } from '@fancyapps/ui/dist/fancybox/'
 import { Tooltip } from 'bootstrap/dist/js/bootstrap.bundle.min'
+import { useSeoMeta, useHead } from '@unhead/vue'
 import MessageBox from '@/components/MessageBox.vue'
 import "@fancyapps/ui/dist/fancybox/fancybox.css"
 const route = useRoute();
@@ -117,16 +118,28 @@ const skillName = computed(() => store.getSkillName(portfolio.value.skill));
 const { tools } = storeToRefs(store);
 
 onMounted(() => {
-    const titlePrefix = 'SajadiDev - ';
-    if(portfolio.value){
-        document.title = titlePrefix + portfolio.value.title;
-    }else{
-        document.title = titlePrefix + 'خطا'
-    }
-    // particlesJS.load("showcase__card-hero", "json/particles.json");
     Fancybox.bind('[data-fancybox="gallery"]', {});
     document.querySelectorAll('[data-toggle="tooltip"]')
         .forEach(el => new Tooltip(el));
+});
+
+useSeoMeta({
+  title: portfolio.value ? portfolio.value.title : 'خطا',
+  ogUrl: 'https://sajadidev.ir/#/portfolio/showcase?id=' + (portfolio.value ? portfolio.value.id : ''),
+  ogTitle: portfolio.value ? portfolio.value.title : 'خطا',
+});
+
+useHead({
+    script: [
+        {
+            src: '/particles/particles.min.js',
+            defer: true
+        },
+        {
+            src: '/particles/runParticles.js',
+            defer: true
+        }
+    ]
 });
 
 function getPortfolioFilePath(fileName){

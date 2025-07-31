@@ -1,5 +1,6 @@
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
+import { createHead } from '@unhead/vue/client'
 import App from './App.vue'
 import router from './router.js'
 
@@ -19,8 +20,19 @@ const vuetify = createVuetify({
     directives
 });
 
+const head = createHead({
+    init: [
+        {
+            title: 'علی سجادی - طراح و توسعه‌دهنده فول استک',
+            titleTemplate: 'SajadiDev - %s',
+            htmlAttrs: {lang: 'fa', dir: 'rtl'}
+        }
+    ]
+});
+
 const app = createApp(App);
 app.use(router);
 app.use(vuetify);
+app.use(head);
 app.use(createPinia());
 app.mount('#app');

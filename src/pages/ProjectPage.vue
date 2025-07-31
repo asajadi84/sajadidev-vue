@@ -52,3 +52,14 @@
         </div>
     </section>
 </template>
+
+<script setup>
+import { useSeoMeta } from '@unhead/vue'
+
+useSeoMeta({
+  title: 'سفارش پروژه',
+  ogUrl: 'https://sajadidev.ir/#/project',
+  ogTitle: 'سفارش پروژه',
+});
+
+</script>

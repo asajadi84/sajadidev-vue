@@ -71,6 +71,7 @@ import { storeToRefs } from 'pinia'
 import { useResumeStore } from '@/store/resume'
 import { onMounted } from 'vue'
 import { Tooltip } from 'bootstrap/dist/js/bootstrap.bundle.min'
+import { useSeoMeta } from '@unhead/vue'
 const store = useResumeStore();
 
 const { skills, tools } = storeToRefs(store);
@@ -82,6 +83,12 @@ function getToolIcon(id){
 onMounted(() => {
     document.querySelectorAll('[data-toggle="tooltip"]')
         .forEach(el => new Tooltip(el));
+});
+
+useSeoMeta({
+  title: 'رزومه علی سجادی',
+  ogUrl: 'https://sajadidev.ir/#/resume',
+  ogTitle: 'رزومه علی سجادی',
 });
 
 </script>
